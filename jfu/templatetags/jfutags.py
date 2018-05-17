@@ -1,6 +1,6 @@
 from django.template.context_processors import csrf
 from django.core.urlresolvers import reverse
-from django.template import Library, Context, loader
+from django.template import Library, loader
 
 register = Library()
 
@@ -36,4 +36,4 @@ def jfu(
 
     t = loader.get_template(template_name)
 
-    return t.render(context)
+    return t.render(context.flatten())
